@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MECH DESIGN - Shadreck Almando</title>
+    <!-- Google Font for Professional Typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Oswald:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: white;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            scroll-behavior: smooth;
+        }
+        header {
+            background-color: #1E3A8A; /* Blue */
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        header h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+        }
+        header p {
+            font-size: 1.2rem;
+            font-weight: 500;
+        }
+        section {
+            padding: 80px 20px;
+        }
+        .hero {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background-color: #F9FAFB; /* Light Gray */
+            padding: 60px 20px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            animation: fadeIn 2s forwards;
+        }
+        .hero img {
+            width: 50%;
+            border-radius: 8px;
+            animation: slideIn 1.5s ease-out forwards;
+        }
+        .hero-text {
+            width: 45%;
+        }
+        .cta-button {
+            background-color: #3B82F6; /* Lighter Blue */
+            color: white;
+            padding: 14px 30px;
+            text-decoration: none;
+            border-radius: 30px;
+            font-size: 1.4rem;
+            font-weight: 600;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+        .cta-button:hover {
+            transform: scale(1.1);
+            background-color: #2563EB;
+        }
+        footer {
+            background-color: #1E3A8A;
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+            font-size: 1.1rem;
+            font-weight: 400;
+        }
+        form input, form textarea {
+            padding: 14px;
+            margin: 12px 0;
+            width: 100%;
+            max-width: 500px;
+            border-radius: 8px;
+            border: 1px solid #D1D5DB;
+            font-size: 1rem;
+        }
+        form input[type="submit"] {
+            background-color: #3B82F6;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+        form input[type="submit"]:hover {
+            background-color: #2563EB;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+        @keyframes slideIn {
+            0% {
+                transform: translateX(50%);
+            }
+            100% {
+                transform: translateX(0);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero {
+                flex-direction: column;
+            }
+            .hero img {
+                width: 70%;
+                margin-top: 20px;
+            }
+            .hero-text {
+                width: 80%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>MECH DESIGN</h1>
+        <p>Portfolio of Shadreck Almando - Mechanical Design Engineer</p>
+    </header>
+
+    <section class="hero">
+        <div class="hero-text">
+            <h2>Innovative Mechanical Design Solutions</h2>
+            <p>Explore my work in the field of mechanical design, including complex CAD models, prototypes, and cutting-edge engineering concepts.</p>
+            <a href="#projects" class="cta-button">Explore My Work</a>
+        </div>
+        <img src="jet-engine.jpg" alt="Jet Engine" />
+    </section>
+
+    <section id="about">
+        <h2>About Me</h2>
+        <p>Hi, I'm Shadreck Almando, a passionate mechanical design engineer with a focus on creating precise and innovative solutions for various industries. I believe in turning creative concepts into functional designs.</p>
+        <p>Email: <a href="mailto:almadoshadreck869@gmail.com">almadoshadreck869@gmail.com</a></p>
+        <p>Instagram: <a href="https://www.instagram.com/the_mechanical_eng" target="_blank">@the_mechanical_eng</a></p>
+        <p>Mobile: +919904588537</p>
+    </section>
+
+    <section id="projects">
+        <h2>My Projects</h2>
+        <p>Coming soon! Check out my upcoming projects where I showcase some of my best work.</p>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <p>If you'd like to discuss a project, feel free to reach out to me through the form below or directly via email.</p>
+        <form id="contact-form" action="mailto:almadoshadreck869@gmail.com" method="get" onsubmit="return validateForm()">
+            <label for="name">Your Name:</label><br>
+            <input type="text" id="name" name="name" required><br><br>
+            <label for="email">Your Email:</label><br>
+            <input type="email" id="email" name="email" required><br><br>
+            <label for="message">Message:</label><br>
+            <textarea id="message" name="message" required></textarea><br><br>
+            <input type="submit" value="Send Message">
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Shadreck Almando. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Form Validation
+        function validateForm() {
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+            
+            if (name == "" || email == "" || message == "") {
+                alert("Please fill out all fields before submitting.");
+                return false;
+            }
+            return true;
+        }
+    </script>
+
+</body>
+</html>
